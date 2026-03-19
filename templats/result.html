@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+</head>
+
+<body>
+
+<h1>Result</h1>
+
+<h2>{{name}}</h2>
+
+<h3>Score: {{score}} / 10</h3>
+
+<h2>{{stress}}</h2>
+
+{% if stress == "High Stress" %}
+<h2 style="color:red;">⚠ Alert: Talk to Teacher</h2>
+{% endif %}
+
+<canvas id="chart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+var ctx=document.getElementById('chart');
+
+new Chart(ctx,{
+type:'pie',
+data:{
+labels:['Stress','Remaining'],
+datasets:[{
+data:[{{score}},{{10-score}}]
+}]
+}
+});
+</script>
+
+<br><br>
+
+<a href="/">Back</a>
+
+</body>
+</html>
