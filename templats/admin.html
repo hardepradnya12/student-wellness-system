@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teacher Dashboard</title>
+</head>
+
+<body>
+
+<h1>Teacher Dashboard</h1>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Score</th>
+<th>Stress</th>
+</tr>
+
+{% for s in students %}
+<tr>
+<td>{{s[0]}}</td>
+<td>{{s[1]}}</td>
+
+{% if s[2] == "High Stress" %}
+<td style="color:red;">{{s[2]}}</td>
+{% else %}
+<td>{{s[2]}}</td>
+{% endif %}
+
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
